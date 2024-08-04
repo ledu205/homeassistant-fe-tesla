@@ -57,7 +57,3 @@ Once you have the above all configured, fine-tune the yaml:
 
 Now, you can add the yaml file to your dashboard.  I found it best to create a hidden dashboard and add any card to it.
 From there you can edit the card, click the show code editor button in the bottom corner and paste it all in.
-
-I'll try and make an installer for this at somepoint once enough images are collected, then the user can choose the car model and colour but I have a home renovation, 2 small children and a business to run, time is short.
-
-I'll try and answer any questions too.
