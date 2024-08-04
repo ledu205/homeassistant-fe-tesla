@@ -84,7 +84,7 @@ cards:
               double_tap_action: none
               hold_action: none
             - type: image
-              title: Dévérouiller
+              title: Dévérouiller charge
               image: /local/Tesla/images/buttons/Tesla_Charge_Port_Closed.jpg
               style:
                 top: 72%
@@ -171,7 +171,7 @@ cards:
                   state: 'on'
               elements:
                 - type: state-label
-                  entity: sensor.ledu_live_fr_charging_rate
+                  entity: sensor.ledu_charging_rate
                   tap_action: none
                   double_tap_action: none
                   hold_action: none
@@ -603,7 +603,7 @@ cards:
                   double_tap_action: none
                   hold_action: none
                 - type: state-label
-                  prefix: 'Interior '
+                  prefix: 'Interieur '
                   entity: sensor.ledu_temperature_inside
                   style:
                     top: 20%
@@ -612,7 +612,7 @@ cards:
                     color: '#8a8a8d'
                     font-family: gotham
                 - type: state-label
-                  prefix: '- Exterior '
+                  prefix: '- Exterieur '
                   entity: sensor.ledu_temperature_outside
                   style:
                     top: 20%
