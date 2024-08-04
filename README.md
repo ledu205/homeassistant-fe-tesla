@@ -1,21 +1,6 @@
 # homeassistant-fe-tesla
 
-This is an alpha / preview release.
-
-This Home Assistant configuration allows you to control the functionality of your Telsa with a GUI that is similar to the mobile phone application.  It is a front end / tile for the brilliant intereface from <https://github.com/alandtse/tesla>
-
-![Screenshot 2023-06-22 at 21 26 00](https://github.com/ds2000/homeassistant-fe-tesla/assets/10222737/adff06dd-176e-4c23-af94-f30e405cb222)
-
-![Screenshot 2023-06-22 at 21 26 29](https://github.com/ds2000/homeassistant-fe-tesla/assets/10222737/af036517-a545-41d6-8263-9ddc2d58c8ec)
-
-This is an early release, time is short so I will work on adding features and funtions when and as I can.  People are welcome to fork the code and tweak it too.
-
-If you use this and like it then please: [<img src="/images/bmac.jpeg">](https://www.buymeacoffee.com/daveshaw301)
-
-## Things to know
-
-At present I only have the screen shots for a Red Model 3 (Left-hand drive).  I don't have any access to other Teslas so the user will need to screenshot and format the images as needed.  The images are stored under models/{3/y/x/s}/{colour} - feel free to copy the red model 3 folder and add new images in the appropriate place.
-
+Tesla model 3 highland red/white fr
 ## To do list
 
 1. Climate screen - Heated seat controls - there was an issue with state images that was proving a little tricky
