@@ -14,10 +14,10 @@ cards:
       cards:
         - type: picture-elements
           image: /local/Tesla/images/models/3/red/baseWide.jpg
-          entity: button.terrance_force_data_update
+          entity: button.ledu_force_data_update
           elements:
             - type: state-label
-              entity: sensor.terrance_range
+              entity: sensor.ledu_range
               style:
                 top: 7.2%
                 left: 22%
@@ -26,7 +26,7 @@ cards:
                 color: '#8a8a8d'
                 font-family: gotham
             - type: state-label
-              entity: sensor.terrance_status
+              entity: sensor.ledu_battery
               style:
                 top: 15%
                 left: 10%
@@ -36,8 +36,8 @@ cards:
                 font-family: gotham
             - type: state-icon
               show_name: true
-              title: Refresh Data
-              entity: button.terrance_force_data_update
+              title: Rafraichir les données
+              entity: button.ledu_force_data_update
               icon: mdi:refresh
               style:
                 top: 9.5%
@@ -50,11 +50,11 @@ cards:
                 service: button.press
                 service_data: {}
                 target:
-                  entity_id: button.terrance_force_data_update
+                  entity_id: button.ledu_force_data_update
               double_tap_action: none
               hold_action: none
             - type: image
-              title: Unlock
+              title: Dévérouiller
               style:
                 top: 30%
                 left: 90%
@@ -65,11 +65,11 @@ cards:
                 unlocked: /local/Tesla/images/buttons/Tesla_Door_Unlock.jpg
               tap_action:
                 action: toggle
-              entity: lock.terrance_doors
+              entity: lock.ledu_doors
               double_tap_action: none
               hold_action: none
             - type: image
-              title: ClimateIcon
+              title: Climatisation
               image: /local/Tesla/images/buttons/Tesla_Climate_Fan_On.jpg
               style:
                 top: 50%
@@ -80,11 +80,11 @@ cards:
                 'off': /local/Tesla/images/buttons/Tesla_Climate_Fan_Off.jpg
               tap_action:
                 action: toggle
-              entity: climate.terrance_hvac_climate_system
+              entity: climate.ledu_hvac_climate_system
               double_tap_action: none
               hold_action: none
             - type: image
-              title: Unlock
+              title: Dévérouiller
               image: /local/Tesla/images/buttons/Tesla_Charge_Port_Closed.jpg
               style:
                 top: 72%
@@ -98,7 +98,7 @@ cards:
               hold_action: none
             - type: conditional
               conditions:
-                - entity: cover.terrance_charger_door
+                - entity: cover.ledu_charger_door
                   state: open
               elements:
                 - type: image
@@ -110,7 +110,7 @@ cards:
                     height: 298px
                   image: /local/Tesla/images/models/3/red/baseChargeportOpened.jpg
             - type: image
-              title: Frunk
+              title: Capot avant
               image: /local/Tesla/images/buttons/Tesla_Frunk_Closed.jpg
               style:
                 top: 90%
@@ -121,12 +121,12 @@ cards:
                 opened: /local/Tesla/images/buttons/Tesla_Frunk_Opened.jpg
               tap_action:
                 action: toggle
-              entity: cover.terrance_frunk
+              entity: cover.ledu_frunk
               double_tap_action: none
               hold_action: none
             - type: conditional
               conditions:
-                - entity: cover.terrance_frunk
+                - entity: cover.ledu_frunk
                   state: open
               elements:
                 - type: image
@@ -139,7 +139,7 @@ cards:
                   image: /local/Tesla/images/models/3/red/baseFrunkOpened.jpg
             - type: conditional
               conditions:
-                - entity: cover.terrance_charger_door
+                - entity: cover.ledu_charger_door
                   state: open
               elements:
                 - type: icon
@@ -153,7 +153,7 @@ cards:
                     color: '#039be5'
             - type: conditional
               conditions:
-                - entity: cover.terrance_charger_door
+                - entity: cover.ledu_charger_door
                   state_not: open
               elements:
                 - type: icon
@@ -167,11 +167,11 @@ cards:
                     color: black
             - type: conditional
               conditions:
-                - entity: binary_sensor.terrance_charger
+                - entity: binary_sensor.ledu_charger
                   state: 'on'
               elements:
                 - type: state-label
-                  entity: sensor.terrance_charging_rate
+                  entity: sensor.ledu_live_fr_charging_rate
                   tap_action: none
                   double_tap_action: none
                   hold_action: none
@@ -183,11 +183,11 @@ cards:
                     color: '#039be5'
             - type: conditional
               conditions:
-                - entity: binary_sensor.terrance_charger
+                - entity: binary_sensor.ledu_charger
                   state: 'on'
               elements:
                 - type: state-label
-                  entity: binary_sensor.terrance_charger
+                  entity: binary_sensor.ledu_charger
                   attribute: charging_state
                   tap_action: none
                   double_tap_action: none
@@ -199,7 +199,7 @@ cards:
                     font-weight: normal
                     color: '#039be5'
             - type: image
-              title: Controls
+              title: Controles
               image: /local/Tesla/images/buttons/Tesla_Controls_Button_Stateless.jpg
               style:
                 top: 80%
@@ -213,11 +213,11 @@ cards:
               hold_action: none
             - type: conditional
               conditions:
-                - entity: climate.terrance_hvac_climate_system
+                - entity: climate.ledu_hvac_climate_system
                   state: 'off'
               elements:
                 - type: image
-                  title: ClimateControls
+                  title: Climatisation
                   image: /local/Tesla/images/buttons/Tesla_Climate_Button_Off.jpg
                   style:
                     font-family: gotham
@@ -232,11 +232,11 @@ cards:
                   hold_action: none
             - type: conditional
               conditions:
-                - entity: climate.terrance_hvac_climate_system
+                - entity: climate.ledu_hvac_climate_system
                   state: heat_cool
               elements:
                 - type: image
-                  title: ClimateControls
+                  title: Climatisation
                   image: /local/Tesla/images/buttons/Tesla_Climate_Button_On.jpg
                   style:
                     font-family: gotham
@@ -251,11 +251,11 @@ cards:
                   hold_action: none
             - type: conditional
               conditions:
-                - entity: climate.terrance_hvac_climate_system
+                - entity: climate.ledu_hvac_climate_system
                   state: heat_cool
               elements:
                 - type: state-label
-                  entity: sensor.terrance_temperature_inside
+                  entity: sensor.ledu_temperature_inside
                   style:
                     top: 94.44%
                     left: 41.3%
@@ -264,11 +264,11 @@ cards:
                     font-family: gotham
             - type: conditional
               conditions:
-                - entity: climate.terrance_hvac_climate_system
+                - entity: climate.ledu_hvac_climate_system
                   state: 'off'
               elements:
                 - type: state-label
-                  entity: sensor.terrance_temperature_inside
+                  entity: sensor.ledu_temperature_inside
                   style:
                     top: 94.44%
                     left: 30.3%
@@ -277,9 +277,9 @@ cards:
                     font-family: gotham
             - type: conditional
               conditions:
-                - entity: binary_sensor.terrance_ischarging
+                - entity: binary_sensor.ledu_charger
                   state: 'on'
-                - entity: device_tracker.terrance_location_tracker
+                - entity: device_tracker.ledu_location_tracker
                   state: home
               elements:
                 - type: icon
@@ -293,9 +293,9 @@ cards:
                     color: green
             - type: conditional
               conditions:
-                - entity: binary_sensor.terrance_ischarging
+                - entity: binary_sensor.ledu_charger
                   state: 'on'
-                - entity: device_tracker.terrance_location_tracker
+                - entity: device_tracker.ledu_location_tracker
                   state_not: home
               elements:
                 - type: icon
@@ -319,11 +319,10 @@ cards:
             - type: markdown
               content: >-
                 Charge limit: <font color=white>
-                {{states('number.terrance_charge_limit')}} % </font>
+                {{states('number.ledu_charge_limit')}} % </font>
 
-                <font color=#8a8a8d>
-                {{state_attr('sensor.terrance_energy_added', 'added_range')}} km
-                added during last charging session </font>  
+                <font color=#8a8a8d> {{state_attr('sensor.ledu_energy_added',
+                'added_range')}} km added during last charging session </font>  
               card_mod:
                 style: |
                   ha-card {
@@ -333,7 +332,7 @@ cards:
         - type: entities
           entities:
             - type: custom:slider-entity-row
-              entity: number.terrance_charge_limit
+              entity: number.ledu_charge_limit
               full_row: true
               step: 5
               max: 100
@@ -359,7 +358,7 @@ cards:
                   }
             - type: glance
               entities:
-                - entity: number.terrance_charging_amps
+                - entity: number.ledu_charging_amps
               show_icon: false
               show_name: false
               card_mod:
@@ -406,10 +405,10 @@ cards:
           cards:
             - type: picture-elements
               image: /local/Tesla/images/models/3/red/controlsBackground.jpg
-              entity: button.terrance_force_data_update
+              entity: button.ledu_force_data_update
               elements:
                 - type: state-label
-                  entity: sensor.terrance_range
+                  entity: sensor.ledu_range
                   style:
                     top: 7.2%
                     left: 22%
@@ -425,7 +424,7 @@ cards:
                       }
                 - type: image
                   title: Flash
-                  entity: button.terrance_flash_lights
+                  entity: button.ledu_flash_lights
                   image: /local/Tesla/images/buttons/Tesla_Flash_Lights_Button.jpg
                   style:
                     top: 20%
@@ -437,12 +436,12 @@ cards:
                     service: button.press
                     service_data: {}
                     target:
-                      entity_id: button.terrance_flash_lights
+                      entity_id: button.ledu_flash_lights
                   double_tap_action: none
                   hold_action: none
                 - type: image
                   title: Horn
-                  entity: button.terrance_horn
+                  entity: button.horn
                   image: /local/Tesla/images/buttons/Tesla_Horn_Button.jpg
                   style:
                     top: 40%
@@ -454,12 +453,13 @@ cards:
                     service: button.press
                     service_data: {}
                     target:
-                      entity_id: button.terrance_horn
+                      entity_id: button.horn
                   double_tap_action: none
                   hold_action: none
                 - type: image
                   title: Remote Start
-                  image: /local/Tesla/images/buttons/Tesla_Remote_Start_Button_Off.jpg
+                  image: >-
+                    /local/Tesla/images/buttons/Tesla_Remote_Start_Button_Off.jpg
                   style:
                     top: 60%
                     left: 70%
@@ -470,11 +470,11 @@ cards:
                     service: button.press
                     service_data: {}
                     target:
-                      entity_id: button.terrance_remote_start
+                      entity_id: button.ledu_remote_start
                   double_tap_action: none
                   hold_action: none
                 - type: image
-                  title: Vent
+                  title: Aérer
                   state_image:
                     opened: /local/Tesla/images/buttons/Tesla_Close_Windows_Button.jpg
                     closed: /local/Tesla/images/buttons/Tesla_Vent_Windows_Button.jpg
@@ -485,7 +485,7 @@ cards:
                     height: 40px
                   tap_action:
                     action: toggle
-                  entity: cover.terrance_windows
+                  entity: cover.ledu_windows
                   double_tap_action: none
                   hold_action: none
         - type: button
@@ -514,17 +514,16 @@ cards:
         - type: horizontal-stack
           cards:
             - type: picture-elements
-              image: >-
-                /local/Tesla/images/models/3/red/climateBackground_Fire8HD.jpg
-              entity: button.terrance_force_data_update
+              image: /local/Tesla/images/models/3/red/climateBackground_Fire8HD.jpg
+              entity: button.ledu_force_data_update
               elements:
                 - type: image
                   title: Heated_Seat_Left
-                  entity: select.terrance_heated_seat_left
+                  entity: select.ledu_heated_seat_left
                   image: /local/Tesla/images/buttons/Tesla_Heated_Seat_Off.jpg
                   style:
                     top: 31%
-                    left: 25.9%
+                    left: 20%
                     width: 25px
                     height: 25px
                   tap_action:
@@ -532,16 +531,16 @@ cards:
                     service: button.press
                     service_data: {}
                     target:
-                      entity_id: select.terrance_heated_seat_left
+                      entity_id: select.ledu_heated_seat_left
                   double_tap_action: none
                   hold_action: none
                 - type: image
                   title: Heated_Seat_Right
-                  entity: select.terrance_heated_seat_right
+                  entity: select.ledu_heated_seat_right
                   image: /local/Tesla/images/buttons/Tesla_Heated_Seat_Off.jpg
                   style:
                     top: 31%
-                    left: 38%
+                    left: 34.5%
                     width: 25px
                     height: 25px
                   tap_action:
@@ -549,16 +548,16 @@ cards:
                     service: button.press
                     service_data: {}
                     target:
-                      entity_id: select.terrance_heated_seat_right
+                      entity_id: select.ledu_heated_seat_right
                   double_tap_action: none
                   hold_action: none
                 - type: image
                   title: Heated_Seat_Rear_Left
-                  entity: select.terrance_heated_seat_rear_left
+                  entity: select.ledu_heated_seat_rear_left
                   image: /local/Tesla/images/buttons/Tesla_Heated_Seat_Off.jpg
                   style:
                     top: 50%
-                    left: 25.9%
+                    left: 21%
                     width: 25px
                     height: 25px
                   tap_action:
@@ -566,16 +565,16 @@ cards:
                     service: button.press
                     service_data: {}
                     target:
-                      entity_id: select.terrance_heated_seat_rear_left
+                      entity_id: select.ledu_heated_seat_rear_left
                   double_tap_action: none
                   hold_action: none
                 - type: image
                   title: Heated_Seat_Rear_Center
-                  entity: select.terrance_heated_seat_rear_center
+                  entity: select.ledu_heated_seat_rear_center
                   image: /local/Tesla/images/buttons/Tesla_Heated_Seat_Off.jpg
                   style:
                     top: 50%
-                    left: 31.5%
+                    left: 27.5%
                     width: 25px
                     height: 25px
                   tap_action:
@@ -583,16 +582,16 @@ cards:
                     service: button.press
                     service_data: {}
                     target:
-                      entity_id: select.terrance_heated_seat_rear_center
+                      entity_id: select.ledu_heated_seat_rear_center
                   double_tap_action: none
                   hold_action: none
                 - type: image
                   title: Heated_Seat_Rear_Right
-                  entity: select.terrance_heated_seat_rear_right
+                  entity: select.ledu_heated_seat_rear_right
                   image: /local/Tesla/images/buttons/Tesla_Heated_Seat_Off.jpg
                   style:
                     top: 50%
-                    left: 37.2%
+                    left: 34%
                     width: 25px
                     height: 25px
                   tap_action:
@@ -600,12 +599,12 @@ cards:
                     service: button.press
                     service_data: {}
                     target:
-                      entity_id: select.terrance_heated_seat_rear_right
+                      entity_id: select.ledu_heated_seat_rear_right
                   double_tap_action: none
                   hold_action: none
                 - type: state-label
                   prefix: 'Interior '
-                  entity: sensor.terrance_temperature_inside
+                  entity: sensor.ledu_temperature_inside
                   style:
                     top: 20%
                     left: 64%
@@ -614,7 +613,7 @@ cards:
                     font-family: gotham
                 - type: state-label
                   prefix: '- Exterior '
-                  entity: sensor.terrance_temperature_outside
+                  entity: sensor.ledu_temperature_outside
                   style:
                     top: 20%
                     left: 87%
@@ -623,8 +622,9 @@ cards:
                     font-family: gotham
                 - type: image
                   title: Climate
-                  entity: climate.terrance_hvac_climate_system
-                  image: /local/Tesla/images/buttons/Tesla_Climate_Button_Power_Off.jpg
+                  entity: climate.ledu_hvac_climate_system
+                  image: >-
+                    /local/Tesla/images/buttons/Tesla_Climate_Button_Power_Off.jpg
                   style:
                     top: 40%
                     left: 58%
@@ -632,11 +632,11 @@ cards:
                     height: 50px
                   tap_action:
                     action: toggle
-                    entity_id: climate.terrance_hvac_climate_system
+                    entity_id: climate.ledu_hvac_climate_system
                   double_tap_action: none
                   hold_action: none
                 - type: state-label
-                  entity: climate.terrance_hvac_climate_system
+                  entity: climate.ledu_hvac_climate_system
                   attribute: temperature
                   style:
                     top: 42.5%
@@ -646,7 +646,7 @@ cards:
                     color: white
                 - type: image
                   title: Vent_Windows
-                  entity: cover.terrance_windows
+                  entity: cover.ledu_windows
                   image: /local/Tesla/images/buttons/Tesla_Vent_Windows_Button.jpg
                   style:
                     top: 41%
@@ -659,8 +659,9 @@ cards:
                   hold_action: none
                 - type: image
                   title: Defrost
-                  entity: cover.terrance_windows
-                  image: /local/Tesla/images/buttons/Tesla_Climate_Button_Defrost_Off_324.jpg
+                  entity: cover.ledu_windows
+                  image: >-
+                    /local/Tesla/images/buttons/Tesla_Climate_Button_Defrost_Off_324.jpg
                   style:
                     top: 77%
                     left: 74.5%
