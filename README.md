@@ -37,13 +37,13 @@ To install you'll need a few pre-requistites.  These are:
       - platform: template
         sensors:
           terrance_status:
-            friendly_name: "Terrance Status"
+            friendly_name: "Ledu Status"
             value_template: >
-              {% if is_state('binary_sensor.terrance_parking_brake', 'on') %}
+              {% if is_state('binary_sensor.Ledu_parking_brake', 'on') %}
                 Parked
               {% else %}
-                {% if state_attr('device_tracker.terrance_location_tracker', 'speed') is not none %}
-                  {{ state_attr('device_tracker.terrance_location_tracker', 'speed') }} km/h
+                {% if state_attr('device_tracker.Ledu_location_tracker', 'speed') is not none %}
+                  {{ state_attr('device_tracker.Ledu_location_tracker', 'speed') }} km/h
                 {% else %}
                   Unknown
                 {% endif %}
